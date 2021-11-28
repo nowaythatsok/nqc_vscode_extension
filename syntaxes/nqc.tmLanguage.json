@@ -137,7 +137,7 @@
 				{    
 
 					"name": "keyword.control.nqc",
-					"match": "\\b(if|else|goto|repeat|switch|case|default|do|while|for|break|continue|catch|return|start|stop|catch)\\b"
+					"match": "\\b(if|else|goto|repeat|switch|case|default|do|while|until|for|break|continue|catch|return|start|stop|catch)\\b"
 				},
 				{
 					"name": "storage.modifier.nqc",

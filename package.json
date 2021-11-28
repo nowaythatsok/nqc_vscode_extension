@@ -4,7 +4,8 @@
     "description": "NQC Programming Language Highlighter",
     "publisher": "BirdHouseWorks",
     "repository":"https://github.com/nowaythatsok/nqc_vscode_extension",
-    "version": "0.0.1",
+    "version": "0.0.2",
+    "icon":"images/rcx_128.jpg",
     "engines": {
         "vscode": "^1.59.0"
     },
