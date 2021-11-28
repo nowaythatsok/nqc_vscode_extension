@@ -1,0 +1,36 @@
+{
+    "name": "nqc",
+    "displayName": "NQC",
+    "description": "NQC Programming Language",
+    "publisher": "BirdHouseWorks",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.59.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "nqc",
+                "aliases": [
+                    "Not Quite C",
+                    "nqc"
+                ],
+                "extensions": [
+                    ".nqc",
+                    ".NQC"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "nqc",
+                "scopeName": "source.nqc",
+                "path": "./syntaxes/nqc.tmLanguage.json"
+            }
+        ]
+    }
+}

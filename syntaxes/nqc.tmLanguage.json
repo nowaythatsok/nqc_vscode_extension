@@ -1,0 +1,199 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Not Quite C",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#preprocessor"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#capital_constants"
+		},
+		{
+			"include": "#functions"
+		}
+		
+		
+	],
+	"repository": {
+		"preprocessor":{
+			"patterns": [
+				{
+					"match":"\\s*#(define|include|if|ifdef|ifndef|else|elif|endif)\\b",
+					"name":"keyword.nqc"
+				}
+			]
+		},
+		"comments":{
+			"patterns":[
+				{
+					"begin": "//",
+					"end": "\n",
+					"name":"comment.line.double-slash.nqc",
+					"patterns": [
+						{
+							"match":"(TODO:|FIXME:)",
+							"name":"keyword.nqc"
+						}
+					]
+				},
+				{
+					"begin": "/\\*",
+					"end": "\\*/",
+					"name":"comment.block.nqc",
+					"patterns": [
+						{
+							"match":"(TODO:|FIXME:)",
+							"name":"keyword.nqc"
+						}
+					]
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.nqc",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.nqc",
+					"match": "\\\\."
+				}
+			]
+		},
+		"operators":{
+			"patterns": [
+				
+				{
+					"match": "--",
+					"name": "keyword.operator.decrement.nqc"
+				},
+				{
+					"match": "\\+\\+",
+					"name": "keyword.operator.increment.nqc"
+				},
+				{
+					"match": "%=|\\+=|-=|\\*=|(?<!\\()/=",
+					"name": "keyword.operator.assignment.compound.nqc"
+				},
+				{
+					"match": "&=|\\^=|<<=|>>=|\\|=",
+					"name": "keyword.operator.assignment.compound.bitwise.nqc"
+				},
+				{
+					"match": "<<|>>",
+					"name": "keyword.operator.bitwise.shift.nqc"
+				},
+				{
+					"match": "!=|<=|>=|==|<|>",
+					"name": "keyword.operator.comparison.nqc"
+				},
+				{
+					"match": "&&|!|\\|\\|",
+					"name": "keyword.operator.logical.nqc"
+				},
+				{
+					"match": "&|\\||\\^|~",
+					"name": "keyword.operator.nqc"
+				},
+				{
+					"match": "=",
+					"name": "keyword.operator.assignment.nqc"
+				},
+				{
+					"match": "%|\\*|/|-|\\+",
+					"name": "keyword.operator.nqc"
+				},
+				{
+					"begin": "(\\?)",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.operator.ternary.nqc"
+						}
+					},
+					"end": "(:)",
+					"endCaptures": {
+						"1": {
+							"name": "keyword.operator.ternary.nqc"
+						}
+					}
+				}
+			]
+				
+		},
+		"keywords": {
+			"patterns": [
+				{    
+
+					"name": "keyword.control.nqc",
+					"match": "\\b(if|else|goto|repeat|switch|case|default|do|while|for|break|continue|catch|return|start|stop|catch)\\b"
+				},
+				{
+					"name": "storage.modifier.nqc",
+					"match": "\\b(const|inline)\\b"
+				},
+				{
+					"name": "storage.type.nqc",
+					"match": "\\b(void|int|int\\*|int&)\\b"
+				},
+				{
+					"name": "constant.language.nqc",
+					"match": "\\b(NULL|true|false|TRUE|FALSE)\\b"
+				},
+				{
+					"name": "support.type.nqc",
+					"match": "\\b(sub|task)\\b"
+				},
+				{
+					"name": "keyword.control.resources.nqc",
+					"match": "\\b(acquire|monitor)\\b"
+				},
+				{
+					"name": "keyword.nqc",
+					"match": "\\b(__event_src|__nolist|__res|__sensor|__taskid|__type)\\b"
+				},
+				{
+					"match": "\\babs\\b",
+					"name": "keyword.operator.abs.nqc"
+				},
+				{
+					"match": "\\bsign\\b",
+					"name": "keyword.operator.sign.nqc"
+				},
+				{
+					"match": "\\basm\\b",
+					"name": "keyword.operator.sign.nqc"
+				}
+
+			]
+		},
+		"capital_constants":{
+			"patterns":[
+				{
+					"match": "\\b([A-Z_][0-9A-Z_]+)\\b",
+					"name": "constant.other.nqc"
+				}
+			]
+		},
+		"functions":{
+			"patterns":[
+				{
+					"match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)(?=\\()\\b",
+					"name": "entity.name.function.nqc"
+				}
+			]
+		}
+	},
+	"scopeName": "source.nqc"
+}
