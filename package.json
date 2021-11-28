@@ -1,8 +1,9 @@
 {
-    "name": "nqc",
-    "displayName": "NQC",
-    "description": "NQC Programming Language",
+    "name": "nqchighlighter",
+    "displayName": "NQC Highlighter",
+    "description": "NQC Programming Language Highlighter",
     "publisher": "BirdHouseWorks",
+    "repository":"https://github.com/nowaythatsok/nqc_vscode_extension",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.59.0"
